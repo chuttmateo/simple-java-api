@@ -18,7 +18,7 @@ public class SimpleJavaApiApplication {
 		return new OpenAPI()
 				.info(new Info()
 						.title("SIMPLE JAVA API")
-						.version("0.1")
+						.version("1.0.0")
 						.description("A simple Java API docs")
 						.contact(new Contact().name("Mateo").url("https://github.com/chuttmateo")));
 	}
