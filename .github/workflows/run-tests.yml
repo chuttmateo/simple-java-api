@@ -1,3 +1,5 @@
+name: Run Tests
+
 on:
   workflow_dispatch:
 
@@ -13,6 +15,12 @@ jobs:
         with:
           # Version Spec of the version to use.  Examples: 10.x, 10.15.1, >=10.15.0
           maven-version: 3.9.5 # optional, default is 3.8.2
-          
+
+      - name: Checkout
+        uses: actions/checkout@v4.1.4
+
       - name: Run Tests
         run: mvn test
+
+
+
