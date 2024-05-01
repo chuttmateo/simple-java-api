@@ -30,10 +30,12 @@ jobs:
       - name: Run Tests
         run: mvn test
         
-      - name: Check vulnerabilities using Snyk
-        # You may pin to the exact commit or the version.
-        # uses: snyk/actions@b98d498629f1c368650224d6d212bf7dfa89e4bf
-        uses: snyk/actions@0.4.0
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Run Snyk to check for vulnerabilities
+        uses: snyk/actions/maven-3-jdk-17@master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
           
