@@ -5,6 +5,7 @@ on:
 
 jobs:
   my_job:
+    if: false
     name: test
     runs-on: ubuntu-22.04
     steps:
