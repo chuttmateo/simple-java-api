@@ -29,6 +29,12 @@ jobs:
 
       - name: Run Tests
         run: mvn test
+
+      
+      - name: Run Snyk to check for vulnerabilities
+        uses: snyk/actions/maven-3-jdk-17@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         
   security:
     runs-on: ubuntu-latest
